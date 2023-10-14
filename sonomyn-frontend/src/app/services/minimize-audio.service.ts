@@ -19,6 +19,6 @@ export class MinimizeAudioService {
 
     console.log('minimizing audio file...')
 
-    return this.http.post(this.url, formData, { headers })
+    return this.http.post(this.url, formData, { headers, responseType: 'blob' })
   }
 }
