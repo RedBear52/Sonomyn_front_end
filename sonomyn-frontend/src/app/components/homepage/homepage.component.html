@@ -1,0 +1,23 @@
+<mat-toolbar color="primary">Sonomyn</mat-toolbar>
+
+
+<form (submit)="onSubmit()" action="/api/reduce-15mb" method="POST" enctype="multipart/form-data">
+    <mat-label for="audioFile">Select an audio file: </mat-label>
+    <input type="file" id="audioFile" name="audioFile" (change)="onFileSelected($event)" />
+    <br>
+    <br>
+    <button mat-raised-button type="submit">Submit</button>
+    <!-- <button mat-raised-button type="click" id="trans-button" (click)="onDownloadTranscription()">
+        Download Transcription
+    </button> -->
+</form>
+
+<mat-card>
+    <mat-card-title>Instructions</mat-card-title>
+    <mat-card-content>
+        <p>Upload an audio file that is larger than 15mb and Sonomyn will reduce the file size using a gentle bitrate
+            reduction.</p>
+        <p>After bitrate reduction, if the file is still larger than 15mb, Sonomyn will then slice the file into smaller
+            files - each 15mb or less.</p>
+    </mat-card-content>
+</mat-card>

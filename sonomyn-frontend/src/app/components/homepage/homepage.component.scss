@@ -1,0 +1,15 @@
+mat-card {
+  padding: 1rem;
+  color: var(--color-primary-contrast);
+  background-color: var(--color-primary);
+}
+
+mat-card-title {
+  display: flex;
+  justify-content: left;
+  margin-left: 1rem;
+}
+
+form {
+  padding: 1rem;
+}
