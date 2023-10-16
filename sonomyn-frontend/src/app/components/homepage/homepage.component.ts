@@ -8,7 +8,9 @@ import { MinimizeAudioService } from '../../services/minimize-audio.service'
 })
 export class HomepageComponent {
   file: File | undefined
+  fileUrl: string | undefined
   loading = false
+  blobUrl: string | undefined = ''
 
   constructor(private minimizeAudioService: MinimizeAudioService) {}
 
@@ -28,17 +30,29 @@ export class HomepageComponent {
 
     this.minimizeAudioService
       .minimizeAudio(this.file)
-      .subscribe((response: any) => {
+      .subscribe((response: Blob) => {
         console.log(response)
-        this.file = response.file
+
+        const contentType = response.type
+        const file = new File([response], 'minimized-audio.zip', {
+          type: contentType,
+        })
+
+        this.file = file
         console.log(this.file)
         this.loading = false
-
-        alert('Audio file minimized successfully.') // Display a success message
-        window.location.reload()
+        this.blobUrl = URL.createObjectURL(this.file)
+        console.log(this.blobUrl)
 
         console.log('Audio file minimized successfully.')
       })
+  }
+
+  onDownload() {
+    const a = document.createElement('a')
+    // a.href = blobUrl
+    a.download = 'audioFiles.zip'
+    a.click()
   }
 
   onFileSelected(event: any) {

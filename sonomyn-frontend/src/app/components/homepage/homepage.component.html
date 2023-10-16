@@ -21,3 +21,25 @@
             files - each 15mb or less.</p>
     </mat-card-content>
 </mat-card>
+
+<!-- <div class="download-button">
+    <button mat-raised-button type="click" id="download-btn" (click)="onDownload( )">
+        Download Minimized Audio
+    </button>
+</div> -->
+
+<div class="download-file">
+    <a href="{{ blobUrl }}">
+        <button mat-raised-button [disabled]="!blobUrl">
+            Download Audio
+        </button>
+    </a>
+</div>
+
+<!-- <div class="file-stream">
+    <a href="fileUrl" download="minimized-audio.zip">
+        <button mat-raised-button type="click" id="download-button">
+            Donwload Minimized Audio
+        </button>
+    </a>
+</div> -->

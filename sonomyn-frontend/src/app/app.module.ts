@@ -12,6 +12,7 @@ import { MatCardModule } from '@angular/material/card'
 import { MatButtonModule } from '@angular/material/button'
 import { MatToolbarModule } from '@angular/material/toolbar'
 import { MatFormFieldModule } from '@angular/material/form-field'
+import { saveAs } from 'file-saver'
 
 @NgModule({
   declarations: [AppComponent, HomepageComponent],
