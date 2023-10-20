@@ -5,7 +5,8 @@ import { HttpClient, HttpHeaders } from '@angular/common/http'
   providedIn: 'root',
 })
 export class MinimizeAudioService {
-  private url = 'http://localhost:3000/api/reduce-15mb'
+  // private url = 'http://localhost:3000/api/reduce-15mb'
+  private url = 'https://sonomyn-audio-reduction.onrender.com/api/reduce-15mb'
 
   constructor(private http: HttpClient) {}
 
