@@ -1,5 +1,6 @@
 import { Component } from '@angular/core'
 import { MinimizeAudioService } from '../../services/minimize-audio.service'
+import { trigger, state, style, animate, transition } from '@angular/animations'
 
 @Component({
   selector: 'app-homepage',
@@ -11,6 +12,7 @@ export class HomepageComponent {
   fileUrl: string | undefined
   loading = false
   blobUrl: string | undefined = ''
+  pulseState: string = 'default'
 
   constructor(private minimizeAudioService: MinimizeAudioService) {}
 
@@ -53,10 +55,15 @@ export class HomepageComponent {
     // a.href = blobUrl
     a.download = 'audioFiles.zip'
     a.click()
+    this.clearSelectedAudio()
   }
 
   onFileSelected(event: any) {
     this.file = event.target.files[0]
     console.log(this.file)
+  }
+
+  clearSelectedAudio() {
+  
   }
 }

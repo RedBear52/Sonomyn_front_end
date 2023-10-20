@@ -1,6 +1,5 @@
 <mat-toolbar color="primary">Sonomyn</mat-toolbar>
 
-
 <form (submit)="onSubmit()" action="/api/reduce-15mb" method="POST" enctype="multipart/form-data">
     <mat-label for="audioFile">Select an audio file: </mat-label>
     <input type="file" id="audioFile" name="audioFile" (change)="onFileSelected($event)" />
@@ -9,16 +8,26 @@
     <button mat-raised-button type="submit">Submit</button>
 </form>
 
+<div class=" loader">
+    <mat-progress-bar *ngIf="loading" mode="indeterminate"></mat-progress-bar>
+</div>
 <mat-card>
     <mat-card-title>Instructions</mat-card-title>
     <mat-card-content>
-        <p>Upload an audio file that is larger than 15mb and Sonomyn will reduce the file size using a gentle bitrate
+        <p>Upload an audio file that is larger than 15mb and Sonomyn will reduce the file size using a gentle
+            bitrate
             reduction.</p>
-        <p>After bitrate reduction, if the file is still larger than 15mb, Sonomyn will then slice the file into smaller
+        <p>After bitrate reduction, if the file is still larger than 15mb, Sonomyn will then slice the file into
+            smaller
             files - each 15mb or less.</p>
+        <p>
+            After audio processing, you will be able to download the processed audio file(s).
+        </p>
     </mat-card-content>
 </mat-card>
-
+<div class=" loader">
+    <mat-progress-bar *ngIf="loading" mode="indeterminate"></mat-progress-bar>
+</div>
 
 <div class="download-file">
     <a href="{{ blobUrl }}">
@@ -27,11 +36,3 @@
         </button>
     </a>
 </div>
-
-<!-- <div class="file-stream">
-    <a href="fileUrl" download="minimized-audio.zip">
-        <button mat-raised-button type="click" id="download-button">
-            Donwload Minimized Audio
-        </button>
-    </a>
-</div> -->

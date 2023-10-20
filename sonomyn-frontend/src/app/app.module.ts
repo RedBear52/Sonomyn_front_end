@@ -12,10 +12,11 @@ import { MatCardModule } from '@angular/material/card'
 import { MatButtonModule } from '@angular/material/button'
 import { MatToolbarModule } from '@angular/material/toolbar'
 import { MatFormFieldModule } from '@angular/material/form-field'
-import { saveAs } from 'file-saver'
+import { MatProgressBarModule } from '@angular/material/progress-bar';
+import { FooterComponent } from './components/footer/footer.component'
 
 @NgModule({
-  declarations: [AppComponent, HomepageComponent],
+  declarations: [AppComponent, HomepageComponent, FooterComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -26,6 +27,7 @@ import { saveAs } from 'file-saver'
     MatButtonModule,
     MatToolbarModule,
     MatFormFieldModule,
+    MatProgressBarModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

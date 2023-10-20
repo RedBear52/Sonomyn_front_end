@@ -1,7 +1,7 @@
 mat-card {
   padding: 1rem;
   color: var(--color-primary-contrast);
-  background-color: var(--color-primary);
+  background-color: var(--color-accent);
 }
 
 mat-card-title {
@@ -16,4 +16,18 @@ form {
 
 .download-file {
   padding: 1rem;
+}
+
+mat-toolbar {
+  background-color: var(--color-primary);
+}
+
+mat-toolbar::before {
+  content: '\1F3B5'; /* musical note emoji */
+  margin-right: 0.5rem;
+}
+
+mat-toolbar::after {
+  content: '\1F4FB'; /* radio emoji */
+  margin-left: 0.5rem;
 }
